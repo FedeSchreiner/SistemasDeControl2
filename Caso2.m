@@ -2,6 +2,7 @@
 
 clear all,clc;
 X=-[0 ; 0 ; 0 ];
+%X=-[0 ; 0 ; 0 ];
 ii=0;
 t_etapa=1e-7;   %tiempo de integración
 wRef=2;
