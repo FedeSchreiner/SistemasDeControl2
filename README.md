@@ -53,7 +53,7 @@ Parte Profesor Laboret
 
 :arrow_right: Informe [Tarea 1](https://docs.google.com/document/d/1ebuLsdGK0VhUDwSOOCSTR7kwyCwv4MIh2N2d7EQ1ip8/edit?usp=sharing)
 
-   >Archivo con el codigo: [Tarea1_L.m](https://github.com/Schreiner-F/SistemasDeControl2/blob/main/Tarea1_L.m)
+   >Archivo con el codigo: [Tarea1_L.m](https://github.com/FedeSchreiner/SistemasDeControl2/blob/main/Tarea1_L.m)
 
 
 
