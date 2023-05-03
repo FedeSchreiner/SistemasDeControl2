@@ -22,10 +22,10 @@
    > Archivo con el codigo: [Caso2.m](https://github.com/FedeSchreiner/SistemasDeControl2/blob/main/Caso2.m)
                           [modmotor.m](https://github.com/FedeSchreiner/SistemasDeControl2/blob/main/modmotor.m)
    
-    Punto 1: WIP
-    Punto 2: 
-    Punto 3: WIP
-    Punto 4: WIP
+    Punto 1: Empezado
+    Punto 2: no se si es muy corto o me faltan cosas.
+    Punto 3: Estructurado de como empezar a resolverlo
+    Punto 4: Estructurado de como empezar a resolverlo
         
 
 :arrow_right: Informe de Actividad N°2:
