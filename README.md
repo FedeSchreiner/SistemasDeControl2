@@ -4,7 +4,7 @@
  
  :arrow_right: Informe de Actividad N°1: Representacion de Sistemas y  Control PID:
 
-   Se dan 4 casos de estudio los cuales hay que desarrollar informes y simulaciones para cada uno, se 
+   Se dan 2 casos de estudio los cuales hay que desarrollar informes y simulaciones para cada uno, se 
    desarrolla un pdf con los informes para cada caso y se sube un archivo a cada caso, todo va a estar 
    en link adjuntos.
 
