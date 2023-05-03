@@ -12,14 +12,14 @@ Mat_D = 0;
 [num,den] = ss2tf(Mat_A,Mat_B,Mat_C,Mat_D);
 G=tf(num,den)
 a = eig(G)
-At = log(0.95)/ a(1) * 0.9   %tiempo de muestreo
-T = log(0.05)/ a(2) * 2.4    %tiempo de simulaci髇
+At = log(0.95)/ a(1) * 0.9  ; %tiempo de muestreo
+T = log(0.05)/ a(2) * 2.4  ;  %tiempo de simulaci贸n
 
 %condiciones iniciales;
 Vc(1)=0;
 Il(1)=0;
 u(1)=12;
-Kmax=round(T/At)
+Kmax=round(T/At);
 I1=zeros(1,Kmax);
 Vc=zeros(1,Kmax);
 u=linspace(0,0,Kmax);
@@ -50,9 +50,9 @@ subplot(3,1,1);hold on;grid on;plot(t,Il,'b');title('IL,r');
 subplot(3,1,2);hold on;grid on;plot(t,Vc,'c');title('Vc,r');
 subplot(3,1,3);hold on;grid on;plot(t,u,'m');title('U,r');
 
-%% Punto 2
+%%
 clear all; close all; clc;
-R = 5,6e3; %aca tenia 100k en 2021 y lo hice mal en 2022 porque copie directamente de mi trabajo de 2021
+R = 5,6e3; %aca tenia 100k en 2021
 L = 10e-6;
 C = 100e-9;
 
@@ -66,7 +66,7 @@ G=tf(num,den)
 a = eig(G);
 
 % At = (log(0.95)/ a(1)) * 1.5 ; %tiempo de muestreo
-% T = (log(0.05)/ a(2)) *0.01 ;  %tiempo de simulaci髇
+% T = (log(0.05)/ a(2)) *0.01 ;  %tiempo de simulaci贸n
 
 At = 1e-10;
 T=4e-3;
@@ -103,7 +103,7 @@ subplot(3,1,1);hold on;grid on;plot(t,Il,'b');title('IL,r');
 subplot(3,1,2);hold on;grid on;plot(t,Vc,'c');title('Vc,r');
 subplot(3,1,3);hold on;grid on;plot(t,u,'m');title('U,r');
 
-%% PUNTO 3
+%%
 % el modelo dinamico a traves del metodo de chena
 clear all;clc;close all
 %Sacamos los datos del excel
@@ -172,7 +172,7 @@ sys_G_ang=tf(K*[T3_ang 1],conv([T1_ang 1],[T2_ang 1]))
 
 
 %planteamos un R que a nosotros nos parezca
-R = 100
+R = 110
 %tenemos que abajo para despejar
 [numerador denominador] = tfdata(sys_G_ang, 'v');
 denominador = denominador / denominador(1);
@@ -189,7 +189,7 @@ G = tf(numerador,[1 (R/L) 1/(L*C)]);
 figure(1);
 step(sys_G_ang,opt);hold on;
 step(G,opt),hold on;
-legend('Respuesta al escal髇 Excel','Respuesta al escal髇 Modelo');
+legend('Respuesta al escal贸n Excel','Respuesta al escal贸n Modelo');
 
 
 
@@ -223,7 +223,7 @@ G=tf(num,den)
 a = eig(G);
 
 % At = (log(0.95)/ a(1)) * 1.5 ; %tiempo de muestreo
-% T = (log(0.05)/ a(2)) *0.01 ;  %tiempo de simulaci髇
+% T = (log(0.05)/ a(2)) *0.01 ;  %tiempo de simulaci贸n
 
 At = 1e-5;
 T=5e-2;
@@ -255,7 +255,7 @@ end
 
 
 %----
-archivo = 'Curvas_Medidas_RLC.xls';
+archivo = 'Curvas_Medidas_RLC.xlsx';
 hoja = 'Hoja1';
 %solo donde hace el step
 rango1= 'A501:A1001';
@@ -267,5 +267,5 @@ im  = xlsread(archivo,hoja,rango2);
 figure(1);
 plot(t0,im,'k');hold on;
 plot(t,I,'b');hold on;
-legend('Respuesta al escal髇 Excel','Respuesta al escal髇 Modelo');
+legend('Respuesta al escal贸n Excel','Respuesta al escal贸n Modelo');
 

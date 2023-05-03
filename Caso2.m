@@ -2,7 +2,7 @@
 
 clear all,clc;
 X=-[0 ; 0 ; 0 ];
-%X=-[0 ; 0 ; 0 ];
+
 ii=0;
 t_etapa=1e-7;   %tiempo de integración
 wRef=2;
@@ -42,19 +42,30 @@ xlabel('Tiempo [S]');
 
 
 %% punto 3
+
+
 %chema motor.
 clear all;clc;close all;
 %Sacamos los datos del excel
-archivo = 'Curvas_Medidas_Motor1.xlsx';
+archivo = 'Curvas_Medidas_Motor_2023.xlsx';
 hoja = 'Hoja1';
 
-rango1= 'A3658:A6326';
-rango2= 'B3658:B6326';
-rango3= 'C3658:C6326';
+% rango1= 'A3658:A6326';
+% rango2= 'B3658:B6326';
+% rango3= 'C3658:C6326';
 
-t0=xlsread(archivo,hoja,rango1)-0.02;
+rango1= 'A1:A31054';
+rango2= 'B1:B31054';
+rango3= 'C1:C31054';
+rango4= 'D1:D31054';
+rango5= 'E1:E31054';
+
+% t0=xlsread(archivo,hoja,rango1)-0.02;
+t0=xlsread(archivo,hoja,rango1);
 omega=xlsread(archivo,hoja,rango2);
 Ia=xlsread(archivo,hoja,rango3);
+Va=xlsread(archivo,hoja,rango4);
+Tll=xlsread(archivo,hoja,rango5);
 
 %%%aca comienza el algoritmo de chema
 opt = stepDataOptions;
@@ -110,9 +121,17 @@ num=[Ki];
 den=[Laa*J Ra*J Ki*Km];
 G = tf(num/den(3),den/den(3))
 [y1,t1] = step(G,opt);
+
 figure(1);
 step(sys_G_ang,opt);hold on;
 step(G,opt),hold on;
+
+figure(2);
+plot(t0,omega);hold on;grid on;
+subplot(4,1,1),plot(t0,omega);hold on;grid on;
+subplot(4,1,2),plot(t0,Ia);hold on;grid on;
+subplot(4,1,3),plot(t0,Va);hold on;grid on;
+subplot(4,1,4),plot(t0,Tll);hold on;grid on;
 
 %% -----------------------------
 clear all;close all;clc
