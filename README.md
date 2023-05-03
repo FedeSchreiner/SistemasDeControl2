@@ -17,7 +17,7 @@
     Punto 3: Casi terminado
     Punto 4: Casi terminado
  
-   [PDF con informe CASO 2](https://docs.google.com/document/d/156lKvcR049z2z5Zb2QlreEXH-50z-n29prEqMZS9sx8/edit?usp=sharing): Sistema lineal de tres variables de estado.
+   [PDF con informe CASO 2](https://docs.google.com/document/d/1ylS9Jh_2HzYKewl1n4DpZV_bC9DShHevGlnkFtISJVQ/edit?usp=sharing): Sistema lineal de tres variables de estado.
       
    > Archivo con el codigo: [Caso2.m](https://github.com/FedeSchreiner/SistemasDeControl2/blob/main/Caso2.m)
                           [modmotor.m](https://github.com/FedeSchreiner/SistemasDeControl2/blob/main/modmotor.m)
