@@ -4,38 +4,29 @@
  
  :arrow_right: Informe de Actividad N°1: Representacion de Sistemas y  Control PID:
 
-   Se dan 4 casos de estudio los cuales hay que desarrollar informes y simulaciones para cada uno, se 
+   Se dan 2 casos de estudio los cuales hay que desarrollar informes y simulaciones para cada uno, se 
    desarrolla un pdf con los informes para cada caso y se sube un archivo a cada caso, todo va a estar 
    en link adjuntos.
 
-   > [Caso 1](https://docs.google.com/document/d/1afIPT_iCFKRHa2L1LoogDXOYFNV7GClfvgGq1rEEPoQ/edit?usp=sharing): Sistema lineal de dos variables de estado.
+   [PDF con informe CASO 1](https://docs.google.com/document/d/1tnQ841CLd2A2weBYijJ5Xmtyb4p2V2Wl9xR5-vj5GTg/edit?usp=sharing): Sistema lineal de dos variables de estado.
  
-   Archivo con el codigo: [Caso1.m](https://github.com/Schreiner-F/SistemasDeControl2/blob/main/Caso1.m)
+   > Archivo con el codigo: [Caso1.m](https://github.com/FedeSchreiner/SistemasDeControl2/blob/main/Caso1.m)
    
-    Terminado.
+    Punto 1: Casi terminado
+    Punto 2: Cambiar un valor
+    Punto 3: Casi terminado
+    Punto 4: Casi terminado
  
-   > [Caso 2](https://docs.google.com/document/d/156lKvcR049z2z5Zb2QlreEXH-50z-n29prEqMZS9sx8/edit?usp=sharing): Sistema lineal de tres variables de estado.
+   [PDF con informe CASO 2](https://docs.google.com/document/d/1ylS9Jh_2HzYKewl1n4DpZV_bC9DShHevGlnkFtISJVQ/edit?usp=sharing): Sistema lineal de tres variables de estado.
       
-   Archivo con el codigo: [Caso2.m](https://github.com/Schreiner-F/SistemasDeControl2/blob/main/Caso2.m)
-                          [modmotor.m](https://github.com/Schreiner-F/SistemasDeControl2/blob/main/modmotor.m)
+   > Archivo con el codigo: [Caso2.m](https://github.com/FedeSchreiner/SistemasDeControl2/blob/main/Caso2.m)
+                          [modmotor.m](https://github.com/FedeSchreiner/SistemasDeControl2/blob/main/modmotor.m)
    
-    Falta acomodar punto 3 - Todo lo demas terminado.
+    Punto 1: Empezado
+    Punto 2: no se si es muy corto o me faltan cosas.
+    Punto 3: Estructurado de como empezar a resolverlo
+    Punto 4: Estructurado de como empezar a resolverlo
         
-     
-   > [Caso 3](https://docs.google.com/document/d/1QgqsrVqr_H_Ermvhl5bEA2tGp6z1TX9DH1Qxp_NPmYc/edit?usp=sharing): Sistema lineal de cuatro variables de estado.
-   
-   Archivo con el codigo: [Caso3.m](https://github.com/Schreiner-F/SistemasDeControl2/blob/main/Caso3.m)
-   
-    Terminado.
-       
-     
-   > [Caso 4](https://docs.google.com/document/d/1aRwi4FQW--v2sx2XXt90OtChxGeXh6HUV3hoh6qoK9w/edit?usp=sharing): Sistema no lineal de cuatro variables de estado.
-     
-   Archivo con el codigo:[Caso4.m](https://github.com/Schreiner-F/SistemasDeControl2/blob/main/Caso4.m)
-   
-    Terminado.
-    
-
 
 :arrow_right: Informe de Actividad N°2:
 
@@ -45,9 +36,7 @@
  .
 
 
-o-----------------o-----------------o-----------------o-----------------o-----------------o-----------------o-----------------o-----------------o
-.
-.
+o-----------------o-----------------o-----------------o
 
 Parte Profesor Laboret
 
