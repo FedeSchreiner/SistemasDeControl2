@@ -47,7 +47,7 @@ plot(t,x2);title('i_a');xlabel('Tiempo [S]');ylabel('[A]');grid on;hold on;
 
 
 %chema motor.
-clear all;clc;close all;
+clear all;clc;
 %Sacamos los datos del excel
 archivo = 'Curvas_Medidas_Motor_2023.xlsx';
 hoja = 'Hoja1';
@@ -56,14 +56,28 @@ hoja = 'Hoja1';
 % rango2= 'B3658:B6326';
 % rango3= 'C3658:C6326';
 
-rango1= 'A1:A31054';
-rango2= 'B1:B31054';
-rango3= 'C1:C31054';
-rango4= 'D1:D31054';
-rango5= 'E1:E31054';
+% rango1= 'A1:A31054';
+% rango2= 'B1:B31054';
+% rango3= 'C1:C31054';
+% rango4= 'D1:D31054';
+% rango5= 'E1:E31054';
+
+% sin torque
+% rango1= 'A101:A15000';
+% rango2= 'B101:B15000';
+% rango3= 'C101:C15000';
+% rango4= 'D101:D15000';
+% rango5= 'E101:E15000';
+
+%con torque
+rango1= 'A18188:A31054';
+rango2= 'B18188:B31054';
+rango3= 'C18188:C31054';
+rango4= 'D18188:D31054';
+rango5= 'E18188:E31054';
 
 % t0=xlsread(archivo,hoja,rango1)-0.02;
-t0=xlsread(archivo,hoja,rango1);
+t0=xlsread(archivo,hoja,rango1)-0.025;
 omega=xlsread(archivo,hoja,rango2);
 Ia=xlsread(archivo,hoja,rango3);
 Va=xlsread(archivo,hoja,rango4);
@@ -72,7 +86,7 @@ Tll=xlsread(archivo,hoja,rango5);
 %%%aca comienza el algoritmo de chema
 opt = stepDataOptions;
 opt.StepAmplitude = 12;
-t_inic=t0(1);
+t_inic=t0(1619);
 
 [val, lugar] =min(abs(t_inic-t0));
 y_t1=omega(lugar);
@@ -114,11 +128,11 @@ sys_G_ang=tf(K*[T3_ang 1],conv([T1_ang 1],[T2_ang 1]))
 [y,t2] = step(sys_G_ang,opt);
 
 %valores que me dio comparando con la formula.
-Laa=13.93e-3;     %inductancia armadura
+Laa=10.76e-3;     %inductancia armadura
 Ra=99;        %resistencia armadura
-Ki=16.52;     %constantes del motor
-Km=0.0605;     %contantes de morot
-J=5.8441e-6;         %inercia motor
+Ki=16.09;     %constantes del motor
+Km=0.0621;     %contantes de morot
+J=5.286e-6;         %inercia motor
 num=[Ki];
 den=[Laa*J Ra*J Ki*Km];
 G = tf(num/den(3),den/den(3))
@@ -126,14 +140,15 @@ G = tf(num/den(3),den/den(3))
 
 figure(1);
 step(sys_G_ang,opt);hold on;
+
 step(G,opt),hold on;
 
-figure(2);
-plot(t0,omega);hold on;grid on;
-subplot(4,1,1),plot(t0,omega);hold on;grid on;
-subplot(4,1,2),plot(t0,Ia);hold on;grid on;
-subplot(4,1,3),plot(t0,Va);hold on;grid on;
-subplot(4,1,4),plot(t0,Tll);hold on;grid on;
+% figure(2);
+% plot(t0,omega);hold on;grid on;
+% subplot(4,1,1),plot(t0,omega);ylabel('Wr[rad s^-1]');grid on;hold on;
+% subplot(4,1,2),plot(t0,Ia);ylabel('Ia[A]');grid on;hold on;
+% subplot(4,1,3),plot(t0,Va);ylabel('Va [V]');grid on;hold on;
+% subplot(4,1,4),plot(t0,Tll);xlabel('Tiempo [S]');ylabel('TL[Nm]');grid on;hold on;
 
 %% -----------------------------
 clear all;close all;clc
@@ -151,39 +166,41 @@ x1=0;
 x2=0;
 x3=0;
 x4=0;
-Tl=2e-5*0;
+Tl=7.5e-2*0;
 for t=0:t_etapa:tF
     ii=ii+1;
-     if (ii==1e5)
-         Tl=2e-5;
+     if (ii==18188)
+         Tl=7.2e-2;
       end
     X=modmotor(t_etapa, X, u,Tl); %agregamos una varialbe de estado torqu
     x1(ii)=X(1); %Omega
     x2(ii)=X(2); %ia
     x3(ii)=X(3); %wp
-    x4(ii)=X(4);
+%     x4(ii)=X(4);
     acc(ii)=u;
 end
 t=0:t_etapa:tF;
 
-% archivo = 'Curvas_Medidas_Motor.xlsx';
-% hoja = 'Hoja1';
-% rango1= 'A1:A22991';
-% rango2= 'B1:B22991';
-% rango3= 'C1:C22991';
-% t0=xlsread(archivo,hoja,rango1);
-% omega1=xlsread(archivo,hoja,rango3);
-% Ia1=xlsread(archivo,hoja,rango2);
-% subplot(2,1,1);hold on;
-% plot(t,x1*0.11,color_);
-% plot(t0,Ia1);
-% title('\omega_r');
-% subplot(2,1,2);hold on;
-% plot(t,x2*0.31,color_);
-% plot(t0,omega1);
-% title('i_a');
-% xlabel('Tiempo [S]');
-% legend('modelo del chema','modelo del excel');
+archivo = 'Curvas_Medidas_Motor_2023.xlsx';
+hoja = 'Hoja1';
+rango1= 'A101:A31054';
+rango2= 'B101:B31054';
+rango3= 'C101:C31054';
+
+color_='b';
+t0=xlsread(archivo,hoja,rango1)-0.025;
+omega1=xlsread(archivo,hoja,rango3);
+Ia1=xlsread(archivo,hoja,rango2);
+subplot(2,1,1);hold on;
+plot(t,x1,color_);
+plot(t0,Ia1);
+title('\omega_r');
+subplot(2,1,2);hold on;
+plot(t,x2,color_);
+plot(t0,omega1);
+title('i_a');
+xlabel('Tiempo [S]');
+legend('modelo del chema','modelo del excel');
 
 %% Punto 4
 

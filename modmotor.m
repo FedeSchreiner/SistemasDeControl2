@@ -1,15 +1,19 @@
-function [X]=modmotor(t_etapa,xant,accion)
-Laa=366e-6;     %inductancia armadura
-J=5e-9;         %inercia motor
-Ra=55.6;        %resistencia armadura
+function [X]=modmotor(t_etapa,xant,accion,Tl)
+% Laa=366e-6;     %inductancia armadura
+% J=5e-9;         %inercia motor
+% Ra=55.6;        %resistencia armadura
 B=0;            %amortiguamiento
-Ki=6.49e-3;     %constantes del motor
-Km=6.53e-3;     %contantes de motot
-
-% TL=0;
+% Ki=6.49e-3;     %constantes del motor
+% Km=6.53e-3;     %contantes de motot
+ Laa=10.76e-3;     %inductancia armadura
+Ra=99;        %resistencia armadura
+Ki=16.09;     %constantes del motor
+Km=0.0621;     %contantes de morot
+J=5.286e-6;         %inercia motor
+TL=Tl;
 % TL=2e-7;
 % TL=2e-6;
-TL=2.12788e-5;
+%TL=2.12788e-5;
 % TL=1;
 
 
@@ -29,15 +33,15 @@ wp=xant(3);
 X=[omega,ia,wp];
 
 
-%motor:
+% % motor:
 % function [X]=modmotor(t_etapa,xant,accion,Tl)
-% Laa=366e-6;
-% J=5e-9;         %inercia motor
-% Ra=55.6;        %resistencia armadura
-% B=0;            %amortiguamiento
-% Ki=6.49e-3;     %constantes del motor
-% Km=6.53e-3;     %contantes de morot
-% TL=Tl;
+% Laa=10.76e-3;     %inductancia armadura
+% Ra=99;        %resistencia armadura
+% Ki=16.09;     %constantes del motor
+% Km=0.0621;     %contantes de morot
+% J=5.286e-6;         %inercia motor
+% B=0;
+% TL=-Tl;
 % Va=accion;   %voltaje de entrada
 % h=1e-7;      % como si fuera el tiempo de simulacion
 % omega=xant(1);
