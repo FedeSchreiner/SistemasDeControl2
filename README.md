@@ -12,20 +12,20 @@
  
    > Archivo con el codigo: [Caso1.m](https://github.com/FedeSchreiner/SistemasDeControl2/blob/main/Caso1.m)
    
-    Punto 1: Terminado
-    Punto 2: Terminado
-    Punto 3: Terminado
-    Punto 4: Terminado
+    Punto 1: Terminado.
+    Punto 2: Terminado.
+    Punto 3: Terminado.
+    Punto 4: Terminado.
  
    [PDF con informe CASO 2](https://docs.google.com/document/d/1ylS9Jh_2HzYKewl1n4DpZV_bC9DShHevGlnkFtISJVQ/edit?usp=sharing): Sistema lineal de tres variables de estado.
       
    > Archivo con el codigo: [Caso2.m](https://github.com/FedeSchreiner/SistemasDeControl2/blob/main/Caso2.m)
                           [modmotor.m](https://github.com/FedeSchreiner/SistemasDeControl2/blob/main/modmotor.m)
    
-    Punto 1: Terminado
-    Punto 2: Terminado
-    Punto 3: Estructurado de como empezar a resolverlo.
-    Punto 4: Estructurado de como empezar a resolverlo.
+    Punto 1: Terminado.
+    Punto 2: Terminado.
+    Punto 3: En proceso.
+    Punto 4: En proceso.
         
 
 :arrow_right: Informe de Actividad N°2:
