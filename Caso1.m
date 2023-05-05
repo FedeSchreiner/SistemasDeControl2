@@ -1,4 +1,4 @@
-clear all; close all; ;clc;
+clear all; close all; clc;
 
 R = 4.7e3;
 L = 10e-6;
@@ -12,8 +12,10 @@ Mat_D = 0;
 [num,den] = ss2tf(Mat_A,Mat_B,Mat_C,Mat_D);
 G=tf(num,den)
 a = eig(G)
-At = log(0.95)/ a(1) * 0.9   %tiempo de muestreo
-T = log(0.05)/ a(2) * 2.4    %tiempo de simulación
+% At = log(0.95)/ a(1) * 0.9   %tiempo de muestreo
+% T = log(0.05)/ a(2) * 2.4    %tiempo de simulación
+At = 36.38e-11   %tiempo de muestreo
+T = 3e-3   %tiempo de simulación
 
 %condiciones iniciales;
 Vc(1)=0;
@@ -29,6 +31,7 @@ vin=12;
 t=linspace(0,T,Kmax);
 x=[Il(1) Vc(1)]';    
 X0=[0 0]';
+
 for i=1:Kmax
     ii=ii+At;
     
@@ -46,13 +49,14 @@ for i=1:Kmax
     
 end
 
-subplot(3,1,1);hold on;grid on;plot(t,Il,'b');title('IL,r');
-subplot(3,1,2);hold on;grid on;plot(t,Vc,'c');title('Vc,r');
-subplot(3,1,3);hold on;grid on;plot(t,u,'m');title('U,r');
+subplot(3,1,1);hold on;grid on;plot(t,Il,'b');title('IL,r');xlabel('Tiempo [S]');ylabel('[A]');
+subplot(3,1,2);hold on;grid on;plot(t,Vc,'c');title('Vc,r');xlabel('Tiempo [S]');ylabel('[V]');
+subplot(3,1,3);hold on;grid on;plot(t,u,'m');title('U,r');xlabel('Tiempo [S]');ylabel('[V]');
+
 
 %% Punto 2
 clear all; close all; clc;
-R = 5,6e3; %aca tenia 100k en 2021 y lo hice mal en 2022 porque copie directamente de mi trabajo de 2021
+R = 5.6e3; 
 L = 10e-6;
 C = 100e-9;
 
@@ -65,11 +69,13 @@ Mat_D = 0;
 G=tf(num,den)
 a = eig(G);
 
-% At = (log(0.95)/ a(1)) * 1.5 ; %tiempo de muestreo
-% T = (log(0.05)/ a(2)) *0.01 ;  %tiempo de simulación
+% At = (log(0.95)/ a(1)) ; %tiempo de muestreo
+% T = (log(0.05)/ a(2)) ;  %tiempo de simulación
 
-At = 1e-10;
-T=4e-3;
+At = 3e-10;
+T=3e-3;
+% At = 36.38e-11   %tiempo de muestreo
+% T = 3e-3   %tiempo de simulación
 
 %condiciones iniciales;
 Vc(1)=0;
@@ -99,9 +105,9 @@ for i=1:Kmax
     Il(i)= x(1);
     Vc(i)= x(2);
        end
-subplot(3,1,1);hold on;grid on;plot(t,Il,'b');title('IL,r');
-subplot(3,1,2);hold on;grid on;plot(t,Vc,'c');title('Vc,r');
-subplot(3,1,3);hold on;grid on;plot(t,u,'m');title('U,r');
+subplot(3,1,1);hold on;grid on;plot(t,Il,'m');title('IL,r');xlabel('Tiempo [S]');ylabel('[A]');
+subplot(3,1,2);hold on;grid on;plot(t,Vc,'b');title('Vc,r');xlabel('Tiempo [S]');ylabel('[V]');
+subplot(3,1,3);hold on;grid on;plot(t,u,'c');title('U,r');xlabel('Tiempo [S]');ylabel('[V]');
 
 %% PUNTO 3
 % el modelo dinamico a traves del metodo de chena
