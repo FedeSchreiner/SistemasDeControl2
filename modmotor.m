@@ -6,8 +6,12 @@ B=0;            %amortiguamiento
 Ki=6.49e-3;     %constantes del motor
 Km=6.53e-3;     %contantes de motot
 
-%TL=2.12788e-5;
-TL=0;
+% TL=0;
+% TL=2e-7;
+% TL=2e-6;
+TL=2.12788e-5;
+% TL=1;
+
 
 Va=accion;   %voltaje de entrada
 h=1e-7;      

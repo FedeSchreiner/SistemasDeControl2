@@ -6,7 +6,8 @@ X=-[0 ; 0 ; 0 ];
 ii=0;
 t_etapa=1e-7;   %tiempo de integración
 wRef=2;
-tF=.15;        %tiempo de simulación
+% tF=.08;        %tiempo de simulación
+ tF=5;
 Ts=t_etapa;
 e=zeros(tF/t_etapa,1);
 u=12;
@@ -16,7 +17,7 @@ x2=0;
 x3=0;
 t1=0;
 
-color_= 'k';
+color_= 'g';
 for t=0:t_etapa:tF
     ii=ii+1;
     X=modmotor(t_etapa, X, u); 
@@ -29,16 +30,17 @@ end
 
 t=0:t_etapa:tF;
 
-subplot(3,1,1);hold on;
-plot(t,x1,color_);title('\omega_r');
-subplot(3,1,2);hold on;
-plot(t,x2,color_);title('i_a');
-subplot(3,1,3);hold on;
-% plot(t,x3,color_);title('Angulo \Theta');
-% subplot(4,1,4);hold on;
-plot(t,acc,color_);title('v_a');
-xlabel('Tiempo [S]');
+% subplot(3,1,1);hold on;
+% plot(t,x1,color_);title('\omega_r');xlabel('Tiempo [S]');
+% subplot(3,1,2);hold on;
+% plot(t,x2,color_);title('i_a');xlabel('Tiempo [S]');
+% subplot(3,1,3);hold on;
+% % plot(t,x3,color_);title('Angulo \Theta');
+% % subplot(4,1,4);hold on;
+% plot(t,acc,color_);title('v_a');xlabel('Tiempo [S]');
 
+plot(t,x2);title('i_a');xlabel('Tiempo [S]');ylabel('[A]');grid on;hold on;
+ legend('Con TL=0','Con TL=2e-7','Con TL=2e-6','Con TL=2.12788e-5');
 
 
 %% punto 3
