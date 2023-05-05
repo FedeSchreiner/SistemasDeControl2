@@ -12,10 +12,10 @@
  
    > Archivo con el codigo: [Caso1.m](https://github.com/FedeSchreiner/SistemasDeControl2/blob/main/Caso1.m)
    
-    Punto 1: Casi terminado
-    Punto 2: Cambiar un valor
-    Punto 3: Casi terminado
-    Punto 4: Casi terminado
+    Punto 1: Terminado
+    Punto 2: Terminado
+    Punto 3: Terminado
+    Punto 4: Terminado
  
    [PDF con informe CASO 2](https://docs.google.com/document/d/1ylS9Jh_2HzYKewl1n4DpZV_bC9DShHevGlnkFtISJVQ/edit?usp=sharing): Sistema lineal de tres variables de estado.
       
