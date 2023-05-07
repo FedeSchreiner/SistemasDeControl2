@@ -4,9 +4,9 @@ clear all,clc;
 X=-[0 ; 0 ; 0 ];
 
 ii=0;
-t_etapa=1e-7;   %tiempo de integraci髇
+t_etapa=1e-7;   %tiempo de integraci贸n
 wRef=2;
-% tF=.08;        %tiempo de simulaci髇
+% tF=.08;        %tiempo de simulaci贸n
  tF=5;
 Ts=t_etapa;
 e=zeros(tF/t_etapa,1);
@@ -158,9 +158,9 @@ clear all;close all;clc
 X=-[0 ; 0 ; 0;0];
 ii=0;
 k=0;
-t_etapa=1e-7;   %tiempo de integraci髇
+t_etapa=1e-7;   %tiempo de integraci贸n
 
-tF=0.6;        %tiempo de simulaci髇
+tF=0.6;        %tiempo de simulaci贸n
 
 Ts=t_etapa;
 e=zeros(tF/t_etapa,1);
@@ -178,7 +178,7 @@ for t=0:t_etapa:tF
      if (ii==1.2510e+06)
          u=-12;
      end
-      if (ii==1.2538e+06)
+      if (ii==1.2537e+06)
          Tl=-2.74e-2;
       end
     X=modmotor(t_etapa, X, u,Tl); %agregamos una varialbe de estado torqu
