@@ -216,16 +216,21 @@ legend('modelo del chema','modelo del excel');
 
 %% Punto 4
 
-clear all;clc
+clear all;clc;
 X=-[0 ; 0 ; 0; 0 ];
 ii=0;
 t_etapa=1e-7;   %tiempo de integracion
-wRef=2;
-tF=0.5;        %tiempo de sumulacion
+wRef=1;
+tF=0.3;        %tiempo de sumulacion
+% 
 
-Kp=1e-1;
-Ki=1e-3;
-Kd=0;
+% Kd=0;
+Kp=30;
+Ki=10;
+Kd=0.000000001;
+% Kp=5;
+% Ki=0;
+% Kd=0;
 
 color_='k';
 Ts=t_etapa;
@@ -236,32 +241,36 @@ e=zeros(tF/t_etapa,1);
 u=0;
 input=zeros(round(tF/t_etapa),1);
 delta_Tl=1e-7;
-Tl=0
+% Tl=-2.74e-2
+Tl=1e-4;
 for t=0:t_etapa:tF
     ii=ii+1;
     k=ii+2;
-    if (ii==1e5)
-          Tl=2e-5;
-          end
+%     if (ii==1e5)
+%           Tl=-2.74e-2;
+%           end
     X=modmotor(t_etapa, X, u,Tl); %agregamos una variable de estado torque
     e(k)=wRef-X(4); %ERROR
     u=u+A1*e(k)+B1*e(k-1)+C1*e(k-2); %PID
     x1(ii)=X(1); %Omega
-    x2(ii)=X(2); %ia
-    x3(ii)=X(3); %wp
+    x2(ii)=X(2); %wp
+    x3(ii)=X(3); %ia
     x4(ii)=X(4); %theta
     acc(ii)=u;
 end
 t=0:t_etapa:tF;
 figure(1);
-subplot(4,1,1);hold on;
+subplot(1,4,1);hold on;
 plot(t,x4);title('\theta_t');
-subplot(4,1,2);hold on;
+
+subplot(1,4,2);hold on;
 plot(t,x1);title('\omega_t');
 xlabel('Tiempo [Seg.]');
-subplot(4,1,3);hold on;
+
+subplot(1,4,3);hold on;
 plot(t,x3);title('Corriente');
-subplot(4,1,4);hold on;
+
+subplot(1,4,4);hold on;
 plot(t,acc);title('accion de control, u_t');
 xlabel('Tiempo [Seg.]');
 
