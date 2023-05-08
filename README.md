@@ -24,8 +24,8 @@
    
     Punto 1: Terminado.
     Punto 2: Terminado.
-    Punto 3: No me da nada.
-    Punto 4: En proceso.
+    Punto 3: Terminado.
+    Punto 4: Hice PID sin torque y creo que le tengo que poner torque
         
 
 :arrow_right: Informe de Actividad N°2:
