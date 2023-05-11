@@ -219,18 +219,18 @@ legend('modelo del chema','modelo del excel');
 clear all;clc;
 X=-[0 ; 0 ; 0; 0 ];
 ii=0;
-t_etapa=1e-7;   %tiempo de integracion
+t_etapa=1e-6;   %tiempo de integracion
 wRef=1;
-tF=0.3;        %tiempo de sumulacion
-% 
+tF=0.15;        %tiempo de sumulacion
 
-% Kd=0;
-Kp=30;
-Ki=10;
-Kd=0.000000001;
+Kp=23;
+% Kp=30;
+% Ki=10;
+% Kd=0.000000001;
 % Kp=5;
-% Ki=0;
-% Kd=0;
+% Ki=10;
+Ki=25;
+Kd=0.000001;
 
 color_='k';
 Ts=t_etapa;
@@ -240,7 +240,6 @@ C1=Kd/Ts;
 e=zeros(tF/t_etapa,1);
 u=0;
 input=zeros(round(tF/t_etapa),1);
-delta_Tl=1e-7;
 % Tl=-2.74e-2
 Tl=1e-4;
 for t=0:t_etapa:tF
@@ -274,3 +273,4 @@ subplot(1,4,4);hold on;
 plot(t,acc);title('accion de control, u_t');
 xlabel('Tiempo [Seg.]');
 
+% legend('','');
