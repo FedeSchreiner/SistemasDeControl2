@@ -178,7 +178,7 @@ sys_G_ang=tf(K*[T3_ang 1],conv([T1_ang 1],[T2_ang 1]))
 
 
 %planteamos un R que a nosotros nos parezca
-R = 100
+R = 245
 %tenemos que abajo para despejar
 [numerador denominador] = tfdata(sys_G_ang, 'v');
 denominador = denominador / denominador(1);
